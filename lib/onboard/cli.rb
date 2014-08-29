@@ -122,5 +122,15 @@ module Onboard
         say("All projects already in codebase.", :yellow)
       end
     end
+
+
+    desc "ahready CODEBASE", "add and setup ah_ready module"
+    def ahready(codebase)
+      path = options[:path]}
+      system("cd #{codebase}/#{path}")
+      system("drush dl acquia_connector acquiasdk encrypt")
+      system("git clone git@github.com:nhoag/ah_ready.git && rm -rf ah_ready/.git") #maybe subtree?
+
+    end
   end
 end
